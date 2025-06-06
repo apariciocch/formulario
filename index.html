@@ -4,10 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuestionario de Ansiedad</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Cuestionario de Ansiedad</h1>
+    <section id="datos-personales">
+        <h2>RESULTADOS AUTOEVALUACION EAA ZUNG</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" id="nombre"></td>
+                </tr>
+                <tr>
+                    <td>Edad</td>
+                    <td><input type="number" id="edad"></td>
+                </tr>
+                <tr>
+                    <td>Fecha de Ev.</td>
+                    <td><input type="date" id="fechaEv"></td>
+                </tr>
+                <tr>
+                    <td>Derivado por</td>
+                    <td><input type="text" id="derivadoPor"></td>
+                </tr>
+                <tr>
+                    <td>Evaluado por</td>
+                    <td><input type="text" id="evaluadoPor"></td>
+                </tr>
+                <tr>
+                    <td>Derivado a</td>
+                    <td><input type="text" id="derivadoA"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>PUNTAJE</th>
+                    <th>INDICE</th>
+                    <th>DIAGNOSTICO EAA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="puntaje"></td>
+                    <td id="indice"></td>
+                    <td id="diagnostico"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>TOTAL EAA: <span id="totalEaa"></span></p>
+    </section>
     <form id="anxietyForm">
         <table>
             <thead>
@@ -168,6 +216,6 @@
     <button type="submit">Calcular</button>
     <p id="resultado"></p>
     </form>
-    <script src="../JS/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
