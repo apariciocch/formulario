@@ -23,6 +23,7 @@ const infoIndice = document.getElementById('infoIndice');
 const infoDiagnostico = document.getElementById('infoDiagnostico');
 const recomendacionesList = document.getElementById('recomendaciones');
 const informeSection = document.getElementById('informe');
+const exportarBtn = document.getElementById('exportarWord');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -106,3 +107,19 @@ form.addEventListener('submit', function (e) {
 
     informeSection.style.display = 'block';
 });
+
+if (exportarBtn) {
+    exportarBtn.addEventListener('click', () => {
+        const contenido = informeSection.innerHTML;
+        const html = `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>${contenido}</body></html>`;
+        const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'informe.doc';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+}
