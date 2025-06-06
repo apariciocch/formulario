@@ -26,3 +26,8 @@ button {
     padding: 10px 20px;
     font-size: 16px;
 }
+
+.espacio-blanco {
+    height: 60px;
+    border: 1px dashed #ccc;
+}
