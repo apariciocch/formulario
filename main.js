@@ -12,19 +12,19 @@ form.addEventListener('submit', function (e) {
     inputs.forEach(input => {
         total += parseInt(input.value, 10);
     });
-    const indice = total * 1.25;
+    const indice = Math.round(total * 1.25);
     let diagnostico = '';
-    if (total <= 44) {
-        diagnostico = 'Normal';
-    } else if (total <= 59) {
-        diagnostico = 'Ansiedad Leve';
-    } else if (total <= 74) {
-        diagnostico = 'Ansiedad Moderada';
+    if (indice <= 44) {
+        diagnostico = 'Dentro de límites normales. No hay ansiedad presente';
+    } else if (indice <= 59) {
+        diagnostico = 'Presencia de ansiedad leve';
+    } else if (indice <= 74) {
+        diagnostico = 'Presencia de ansiedad moderada a severa';
     } else {
-        diagnostico = 'Ansiedad Severa';
+        diagnostico = 'Presencia de ansiedad en grado máximo';
     }
     puntajeCell.textContent = total;
-    indiceCell.textContent = indice.toFixed(2);
+    indiceCell.textContent = indice;
     diagnosticoCell.textContent = diagnostico;
     totalEaaSpan.textContent = total;
     resultParagraph.textContent = `Puntaje total: ${total}`;
